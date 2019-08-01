@@ -1,6 +1,6 @@
 # Basic Redux experiments 3
 
-1) Set up app `create-react-app` app
+1) Set up app `yarn create react-app` app
 2) Add dependencies
     - `yarn add react-redux redux @material-ui/core styled-components react-router-dom` 
 3) Resolved lodash security warnings by adding into app folder
@@ -43,4 +43,27 @@
 
     });
     ````
+### NOTE refactoring of the `action creator`
 
+````
+export const ADD_EPISODE = "ADD_EPISODE";
+
+// orig
+export const addEpisode = newEpisode => {
+    return {
+        type: ADD_EPISODE,
+        payload: newEpisode
+    }
+};
+
+// cleaner
+export const addEpisode = newEpisode => (
+        { type: ADD_EPISODE,
+          payload: newEpisode  
+        }    
+);
+
+// sleek
+export const addEpisode = newEpisode => ({type: ADD_EPISODE, payload: newEpisode});
+
+````
