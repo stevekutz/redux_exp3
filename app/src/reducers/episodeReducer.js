@@ -28,7 +28,20 @@ export default episodeReducer = (state = initialState, action) => {
                 favEpisodes: [
                     ...state.favEpisodes, action.payload
                 ]
-            }
+            };
+        
+        case TOGGLE_EPISODE:
+            const changedList = state.favEpisodes.map( episode => {
+                if(Number(episode.id) === Number(action.payload)) {
+                    episode.watched = ! episode.watched;
+                }
+                return episode; // return as is if untoggled
+            })
+            return {... changedList};
+
+
+
+
 
         // DONT'FORGET default
         default:
