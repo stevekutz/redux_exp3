@@ -17,9 +17,6 @@ const StyledEpisode = styled(Card)`
   }
 `;
 
-
-
-
 const Episode = props => {
 
     //handlers
@@ -31,10 +28,24 @@ const Episode = props => {
     const handleDelete = () => props.deleteEpisode(props.id);
 
     return(
-        <StyledEpisode>
-            
-        
+        <StyledEpisode textdec = {props.watched ? 'line-through' : 'none'}> 
+            <p onClick = {handletoggleEpisode}>
+                Title: {props.title}  Season: {props.season}
+            </p>
+
+    
+        <button onClick  = {handleDelete}> Delete</button>
         </StyledEpisode>
     )
-
 }
+
+// NOT NEEDED !!!! ????
+const mapStateToProps = state => {
+   return state;
+ };
+
+export default connect(
+    mapStateToProps,  // NOT NEEDED ???
+    null,
+    {toggleEpisode, deleteEpisode}
+)(Episode);
