@@ -1,4 +1,4 @@
-import initialStateEpisodes from './favEpisodes'; // arr of obj
+import episodes from './favEpisodes'; // arr of obj
 
 /*
 export const ADD_EPISODE = 'ADD_EPISODE';
@@ -16,7 +16,8 @@ import {
 } from '../actions/actionsEpisodes';
 
 // set up initial state
-const initialState = {initialStateEpisodes};
+// const initialState = {initialStateEpisodes};
+const initialState = {episodes};
 
 // ALWAYS pass in initial state and an action
 export default episodeReducer = (state = initialState, action) => {
@@ -24,23 +25,33 @@ export default episodeReducer = (state = initialState, action) => {
 
         case ADD_EPISODE:  
             return {
-                ...state,
-                favEpisodes: [
-                    ...state.favEpisodes, action.payload
+                ...state,   // needed?
+                episodes: [
+                    ...state.episodes, action.payload
                 ]
             };
         
         case TOGGLE_EPISODE:
-            const changedList = state.favEpisodes.map( episode => {
+            const changedList = state.episodes.map( episode => {
                 if(Number(episode.id) === Number(action.payload)) {
                     episode.watched = ! episode.watched;
                 }
                 return episode; // return as is if untoggled
-            })
-            return {... changedList};
+            });
+            
+            return { episodes: changedList};
 
+         case DELETE_EPISODE:
+            return {
+                episodes: state.episodes.filter(
+                    episode => episode.id !== action.payload
+                )
+            };   
 
-
+        case DELETE_WATCHED:
+            return {
+                episodes: state.episodes.filter(episode => !episode.watched)
+            };        
 
 
         // DONT'FORGET default
