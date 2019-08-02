@@ -7,7 +7,7 @@
 
     - `yarn add lodash lodash.template`
 
-### Set up Router & Reddux in `index.js`
+4) Set up Router & Redux in `index.js`
     ````
     import {Provider} from 'react-redux';
     import {createStore} from 'redux';
@@ -34,7 +34,7 @@
     ````
 
 
-### `rootReducer`
+5) Build basic `rootReducer`
     ````
     import {combineReducers} from 'redux';
 
@@ -43,6 +43,8 @@
 
     });
     ````
+6) Setup `action creators`
+
 ### NOTE refactoring of the `action creator`
 
 ````
@@ -67,3 +69,56 @@ export const addEpisode = newEpisode => (
 export const addEpisode = newEpisode => ({type: ADD_EPISODE, payload: newEpisode});
 
 ````
+- Build rest of `action creators`
+````
+export const toggleEpisode = id => ({type: TOGGLE_EPISODE, payload: id});
+
+export const deleteEpisode = id = ({type: DELETE_EPISODE, payload: id});
+
+export const deleteWatched = id = ({type: DELETE_WATCHED, payload: null}); // may not need null returned!!
+   
+````
+
+7) Initial Reducer setup
+````
+import initialStateEpisodes from './favEpisodes'; // arr of obj
+
+/*
+export const ADD_EPISODE = 'ADD_EPISODE';
+export const TOGGLE_EPISODE = 'TOGGLE_EPISODE';
+export const DELETE_EPISODE = 'DELETE_EPISODE';
+export const DELETE_WATCHED = 'DELETE_WATCHED';
+*/
+
+// define action-types
+import {
+    ADD_EPISODE,
+    TOGGLE_EPISODE,
+    DELETE_EPISODE,
+    DELETE_WATCHED,
+} from '../actions/actionsEpisodes';
+
+// set up initial state
+const initialState = {initialStateEpisodes};
+
+// ALWAYS pass in initial state and an action
+export default episodeReducer = (state = initialState, action) => {
+    switch(action.type) {
+
+        case ADD_EPISODE:  
+            return {
+                ...state,
+                favEpisodes: [
+                    ...state.favEpisodes, action.payload
+                ]
+            }
+
+        // DONT'FORGET default
+        default:
+            return state;    
+        }
+
+}
+
+````
+

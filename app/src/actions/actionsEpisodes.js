@@ -20,3 +20,10 @@ export const addEpisode = newEpisode => (
 
 // sleek
 export const addEpisode = newEpisode => ({type: ADD_EPISODE, payload: newEpisode});
+
+export const toggleEpisode = id => ({type: TOGGLE_EPISODE, payload: id});
+
+export const deleteEpisode = id = ({type: DELETE_EPISODE, payload: id});
+
+export const deleteWatched = id = ({type: DELETE_WATCHED, payload: null}); // may not need null returned!!
+ 
