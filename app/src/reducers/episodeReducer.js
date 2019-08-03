@@ -25,12 +25,12 @@ export const episodeReducer = (state = initialState, action) => {
 
         case ADD_EPISODE:  
             return {
-           //     ...state,   // NOT needed ??!??
+           //     ...state,   // NOT needed, we spread in existing state and append payload
                 episodes: [
                     ...state.episodes, action.payload
                 ]
             };
-        
+   /*     
         case TOGGLE_EPISODE:
             const changedList = state.episodes.map( episode => {
                 if(Number(episode.id) === Number(action.payload)) {
@@ -40,6 +40,19 @@ export const episodeReducer = (state = initialState, action) => {
             });
 
             return { episodes: changedList};
+    */
+
+        case TOGGLE_EPISODE:
+            return {
+                ...state,
+                episodes: state.episodes.map(episode => {
+                    if(Number(episode.id) === Number(action.payload)) return {...episode, watched: !episode.watched}
+                    return episode;          
+                })
+            }    
+             
+
+
 
          case DELETE_EPISODE:
             return {
