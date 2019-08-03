@@ -20,12 +20,12 @@ import {
 const initialState = {episodes};
 
 // ALWAYS pass in initial state and an action
-export default episodeReducer = (state = initialState, action) => {
+export const episodeReducer = (state = initialState, action) => {
     switch(action.type) {
 
         case ADD_EPISODE:  
             return {
-                ...state,   // needed?
+     //           ...state,   // needed?
                 episodes: [
                     ...state.episodes, action.payload
                 ]
@@ -38,7 +38,7 @@ export default episodeReducer = (state = initialState, action) => {
                 }
                 return episode; // return as is if untoggled
             });
-            
+
             return { episodes: changedList};
 
          case DELETE_EPISODE:
@@ -60,3 +60,5 @@ export default episodeReducer = (state = initialState, action) => {
         }
 
 }
+
+export default episodeReducer;

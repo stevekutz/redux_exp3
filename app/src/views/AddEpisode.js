@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import {addEpisode} from '../actions/actionsEpisodes';
 
-class AddEpisode {
+class AddEpisode extends React.Component{
     state = {
         title: '',
         season: 1,

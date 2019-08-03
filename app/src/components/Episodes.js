@@ -5,16 +5,30 @@ import {deleteWatched} from '../actions/actionsEpisodes';
 
 import Episode from './Episode';
 
-const Episodes = props => {
 
-    return (
-        <div>
-            {props.episodes.map( (episode, index) => {
+/*
+            {props.episodes.map( (episode, index) => (
                 <Episode
                     key = {index}
                     {...episode}
                 />
-            })}
+            ))}
+
+
+*/
+
+
+
+const Episodes = props => {
+
+    return (
+        <div>
+            {props.episodes.map( (episode, index) => (
+                <Episode
+                    key = {index}
+                    {...episode}
+                />
+            ))}
 
             <button                 // NOT props.deleteWatched
                onClick = { () => {props.deleteWatched() } }
@@ -31,7 +45,8 @@ const Episodes = props => {
 // orig
 const mapStateToProps = state => {
     return {
-        episodes: state.episodes // as initialState in reducer
+       // episodes: state.episodes // as initialState in reducer
+       episodes: state.episodes.episodes
     }
 };
 /*

@@ -3,6 +3,7 @@ export const TOGGLE_EPISODE = 'TOGGLE_EPISODE';
 export const DELETE_EPISODE = 'DELETE_EPISODE';
 export const DELETE_WATCHED = 'DELETE_WATCHED';
 
+/*
 // orig
 export const addEpisode = newEpisode => {
     return {
@@ -17,6 +18,7 @@ export const addEpisode = newEpisode => (
           payload: newEpisode  
         }    
 );
+*/
 
 // sleek
 export const addEpisode = newEpisode => ({type: ADD_EPISODE, payload: newEpisode});

@@ -16,7 +16,7 @@ export default [
     {
         id: 3,
         season: 5,
-        title: 'Nghtmre at 20.000 feet',
+        title: 'Nightmare at 20.000 feet',
         watched: false,
     }, 
 

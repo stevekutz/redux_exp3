@@ -18,6 +18,8 @@ const StyledEpisode = styled(Card)`
 `;
 
 const Episode = props => {
+    console.log('Episode props >> ', props);
+
 
     //handlers
     const handletoggleEpisode = () => {
@@ -29,9 +31,9 @@ const Episode = props => {
 
     return(
         <StyledEpisode textdec = {props.watched ? 'line-through' : 'none'}> 
-            <p onClick = {handletoggleEpisode}>
+            <h3 onClick = {handletoggleEpisode}>
                 Title: {props.title}  Season: {props.season}
-            </p>
+            </h3>
 
     
         <button onClick  = {handleDelete}> Delete</button>
@@ -46,6 +48,6 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,  // NOT NEEDED ???
-    null,
+//    null,
     {toggleEpisode, deleteEpisode}
 )(Episode);
