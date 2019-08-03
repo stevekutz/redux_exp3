@@ -44,16 +44,13 @@ export const episodeReducer = (state = initialState, action) => {
 
         case TOGGLE_EPISODE:
             return {
-                ...state,
+        //        ...state,
                 episodes: state.episodes.map(episode => {
                     if(Number(episode.id) === Number(action.payload)) return {...episode, watched: !episode.watched}
                     return episode;          
                 })
             }    
              
-
-
-
          case DELETE_EPISODE:
             return {
                 episodes: state.episodes.filter(

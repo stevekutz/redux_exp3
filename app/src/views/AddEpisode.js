@@ -28,12 +28,15 @@ class AddEpisode extends React.Component{
     submitNewEpisode_h = ev => {
         ev.preventDefault();
 
-        const newEpisode = {...this.state, id: Date.now() };
+        if(this.state.season >= 1  && this.state.title !== '') {
+            const newEpisode = {...this.state, id: Date.now() };
 
-        this.props.addEpisode(newEpisode);
-        //reset form
-        this.setState({title: '', season: 1});
-        this.props.history.push('/');
+            this.props.addEpisode(newEpisode);
+            //reset form
+            this.setState({title: '', season: 1});
+            this.props.history.push('/');
+        }  
+
     };
     
     render() {
@@ -50,7 +53,7 @@ class AddEpisode extends React.Component{
                     />
 
                     <input
-                        type = 'text'
+                        type = 'number'
                         onChange = {this.changeHandler}
                         name = 'season'
                         value = {this.state.season}      
@@ -68,7 +71,10 @@ class AddEpisode extends React.Component{
 
 }
 
+//   no mapStateToProps needed !!
+
+
 export default connect(
-    null,
+    null,    // must pass in null obj
     {addEpisode}
 )(AddEpisode);
