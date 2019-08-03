@@ -98,16 +98,14 @@ export const addEpisode = newEpisode => ({type: ADD_EPISODE, payload: newEpisode
 <div style = 'border: 1px solid deeppink'>
     <h3 style = 'font-weight: bold'> React & Redux DevTools </h3>
     <div style = 'display: flex; justify-content: space-evenly; margin: 10px '>    
-        <img src = 'app/src/img/md/Episodes_React_DevTools.png' alt = 'Episodes-ReactDevTools' max-height = 150px/>
-        <img src = 'app/src/img/md/Redux_DevTools_initial.png' alt = 'Redux_DevTools' max-height = 150px/>
+        <img  style = 'margin: 10px' src = 'app/src/img/md/Episodes_React_DevTools.png' alt = 'Episodes-ReactDevTools' width = 30% height = 100%/>
+        <img style = 'margin: 10px'  src = 'app/src/img/md/Episode_React_DevTools.png' alt = 'Episode-ReactDevTools' width = 30% height = 100%/>
+        <img style = 'margin: 10px' src = 'app/src/img/md/AddEpisode_React_DevTools.png' alt = 'AddEpisode-ReactDevTools' width = 30% height = 100%/>
     </div>
-    <div style = 'display: flex; justify-content: space-evenly ; margin: 10px '> 
-        <img src = 'app/src/img/md/Episode_React_DevTools.png' alt = 'Episode-ReactDevTools' max-height = 150px />
-        <img src = 'app/src/img/md/AddEpisode_React_DevTools.png' alt = 'AddEpisode-ReactDevTools' max-height = 150px />
-    </div>
-    <h3> Redux Log Monitor</h3> 
-    <div>
-        <img src = 'app/src/img/md/Redux_DevTools_LogMonitor.png' alt = 'ReduxDevTools_logger' max-height = '150px' />
+    <h3 style = 'font-weight: bold'> Redux Log Monitor</h3> 
+    <div style = 'display: flex; '>
+        <img style = 'margin: 10px'  src = 'app/src/img/md/Redux_DevTools_LogMonitor.png' alt = 'ReduxDevTools_logger' width = 30% height = 50%/>
+        <img style = 'margin: 10px' src = 'app/src/img/md/Redux_DevTools_initial.png' alt = 'Redux_DevTools'  width  = 30% height = 50%/>
     </div>
 
 </div>
