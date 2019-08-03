@@ -105,7 +105,7 @@ export const addEpisode = newEpisode => ({type: ADD_EPISODE, payload: newEpisode
     <h3 style = 'font-weight: bold'> Redux Log Monitor</h3> 
     <div style = 'display: flex; align-items: flex-start align-content: flex-start' >
         <img style = 'margin: 10px'  src = 'app/src/img/md/Redux_DevTools_LogMonitor.png' alt = 'ReduxDevTools_logger' width = 30% height = 50%/>
-        <img style = 'margin: 10px' src = 'app/src/img/md/Redux_DevTools_initial.png' alt = 'Redux_DevTools'  width  = 30% height = 50%/>
+        <img style = 'margin: 10px, position: absolute, top: 0' src = 'app/src/img/md/Redux_DevTools_initial.png' alt = 'Redux_DevTools'  width  = 30% height = 50%/>
     </div>
 
 </div>
