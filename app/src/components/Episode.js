@@ -26,15 +26,16 @@ const StyledEpisode = styled(Card)`
 `;
 
 const Episode = props => {
-    console.log('Episode props >> ', props);
 
-
+/*
     //handlers
     const handletoggleEpisode = () => {
         props.toggleEpisode(props.id)
     }
-
+*/
     // refactored
+    const handletoggleEpisode = () => props.toggleEpisode(props.id);
+
     const handleDelete = () => props.deleteEpisode(props.id);
 
     return(
@@ -43,12 +44,12 @@ const Episode = props => {
                 Title: {props.title}  Season: {props.season}
             </h3>
 
-    
         <button onClick  = {handleDelete}> Delete</button>
         </StyledEpisode>
     )
 }
 
+/*
 // NOT NEEDED !!!! ????
 const mapStateToProps = state => {
    return state;
@@ -59,4 +60,9 @@ export default connect(
 //    null,
     {toggleEpisode, deleteEpisode}
 )(Episode);
+*/
 
+
+// NO state variables, just passing prop info  & calling action creators 
+// but must pass in null obj instead of leaving undefined
+export default connect( null, { toggleEpisode, deleteEpisode })(Episode);
