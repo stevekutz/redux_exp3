@@ -68,56 +68,26 @@ export const addEpisode = newEpisode => (
 // sleek
 export const addEpisode = newEpisode => ({type: ADD_EPISODE, payload: newEpisode});
 
-````
-- Build rest of `action creators`
-````
-export const toggleEpisode = id => ({type: TOGGLE_EPISODE, payload: id});
+    ````
+    - Build rest of `action creators`
+    ````
+    export const toggleEpisode = id => ({type: TOGGLE_EPISODE, payload: id});
 
-export const deleteEpisode = id => ({type: DELETE_EPISODE, payload: id});
+    export const deleteEpisode = id => ({type: DELETE_EPISODE, payload: id});
 
-export const deleteWatched = id => ({type: DELETE_WATCHED, payload: null}); // may not need null returned!!
-   
-````
+    export const deleteWatched = id => ({type: DELETE_WATCHED, payload: null}); // may not need null returned!!
+    
+    ````
 
-7) Build Reducers
-````
-import initialStateEpisodes from './favEpisodes'; // arr of obj
+7) Build Reducers & wire into combineReducers
+    ````
+    import {combineReducers} from 'redux';
 
-/*
-export const ADD_EPISODE = 'ADD_EPISODE';
-export const TOGGLE_EPISODE = 'TOGGLE_EPISODE';
-export const DELETE_EPISODE = 'DELETE_EPISODE';
-export const DELETE_WATCHED = 'DELETE_WATCHED';
-*/
+    import episodeReducer from './episodeReducer';
 
-// define action-types
-import {
-    ADD_EPISODE,
-    TOGGLE_EPISODE,
-    DELETE_EPISODE,
-    DELETE_WATCHED,
-} from '../actions/actionsEpisodes';
+    export default combineReducers({
+        episodes: episodeReducer
+    });
 
-// set up initial state
-const initialState = {initialStateEpisodes};
-
-// ALWAYS pass in initial state and an action
-export const episodeReducer = (state = initialState, action) => {
-    switch(action.type) {
-
-        case ADD_EPISODE:  
-            return {
-                favEpisodes: [
-                    ...state.favEpisodes, action.payload
-                ]
-            }
-
-        // DONT'FORGET default
-        default:
-            return state;    
-        }
-
-}
-
-````
+    ````
 

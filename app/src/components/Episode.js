@@ -38,14 +38,14 @@ const Episode = props => {
     const handleDelete = () => props.deleteEpisode(props.id);
 
     return(
-        <Card textdec = {props.watched ? 'line-through' : 'none'}> 
+        <StyledEpisode textdec = {props.watched ? 'line-through' : 'none'}> 
             <h3 onClick = {handletoggleEpisode}>
                 Title: {props.title}  Season: {props.season}
             </h3>
 
     
         <button onClick  = {handleDelete}> Delete</button>
-        </Card>
+        </StyledEpisode>
     )
 }
 
@@ -59,3 +59,4 @@ export default connect(
 //    null,
     {toggleEpisode, deleteEpisode}
 )(Episode);
+
