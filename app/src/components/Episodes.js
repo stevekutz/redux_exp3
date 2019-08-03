@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {deleteWatched} from '../actions/actionsEpisodes';
 
 import Episode from './Episode';
+import './episodes.css';
 
 
 /*
@@ -22,7 +23,7 @@ import Episode from './Episode';
 const Episodes = props => {
 
     return (
-        <div>
+        <div className = 'episodesContainer'>
             {props.episodes.map( (episode, index) => (
                 <Episode
                     key = {index}

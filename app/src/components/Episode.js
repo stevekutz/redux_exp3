@@ -7,13 +7,21 @@ import {toggleEpisode, deleteEpisode} from '../actions/actionsEpisodes';
 
 // UPDATE to use SemanticUI React
 const StyledEpisode = styled(Card)`
-  padding: 10px;
+  color: 4px solid green;  
+  padding: 5px;
   margin: 20px 0;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   h3 {
+    border: 1px solid purple;
+    color: darkblue;
     text-decoration: ${props => props.textdec};
+    text-decoration-color: darkslategrey;
+    text-decoration-style: wavy;
+    padding: 2px;
+    margin: 0;
   }
 `;
 
@@ -30,14 +38,14 @@ const Episode = props => {
     const handleDelete = () => props.deleteEpisode(props.id);
 
     return(
-        <StyledEpisode textdec = {props.watched ? 'line-through' : 'none'}> 
+        <Card textdec = {props.watched ? 'line-through' : 'none'}> 
             <h3 onClick = {handletoggleEpisode}>
                 Title: {props.title}  Season: {props.season}
             </h3>
 
     
         <button onClick  = {handleDelete}> Delete</button>
-        </StyledEpisode>
+        </Card>
     )
 }
 

@@ -4,6 +4,14 @@ import {connect} from 'react-redux';
 
 import {addEpisode} from '../actions/actionsEpisodes';
 
+//import tzImg from './img/twz_01.jpeg';
+
+import tzImg from '../img/twz_01.jpeg';
+// point to local file 
+// backgroundImage: `url(${tzImg})`,
+// point to link
+// backgroundImage: `url(https://i1.wp.com/www.thehomicidalhomemaker.com/wp-content/uploads/2018/05/twilight-zone-mystic-seer-candy-box-bw.png)`,
+
 class AddEpisode extends React.Component{
     state = {
         title: '',
@@ -50,6 +58,9 @@ class AddEpisode extends React.Component{
 
                     <button type = 'submit'> Add</button>
                 </form>
+
+                <img src = {tzImg} alt = 'twilightzone' />
+
             </div>
         )
 

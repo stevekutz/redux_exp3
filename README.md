@@ -79,7 +79,7 @@ export const deleteWatched = id => ({type: DELETE_WATCHED, payload: null}); // m
    
 ````
 
-7) Initial Reducer setup
+7) Build Reducers
 ````
 import initialStateEpisodes from './favEpisodes'; // arr of obj
 
@@ -102,12 +102,11 @@ import {
 const initialState = {initialStateEpisodes};
 
 // ALWAYS pass in initial state and an action
-export default episodeReducer = (state = initialState, action) => {
+export const episodeReducer = (state = initialState, action) => {
     switch(action.type) {
 
         case ADD_EPISODE:  
             return {
-                ...state,
                 favEpisodes: [
                     ...state.favEpisodes, action.payload
                 ]
