@@ -96,13 +96,14 @@ export const addEpisode = newEpisode => ({type: ADD_EPISODE, payload: newEpisode
 
 
 <div style = 'border: 1px solid deeppink'>
-    <h3 style = 'font-weight: bold'> Episodes.js with React & Redux DevTools </h3>
+    <h3 style = 'font-weight: bold'> React & Redux DevTools  - Episodes and Episode components</h3>
     <div style = 'display: flex; justify-content: space-evenly; margin: 10px '>    
         <img src = 'app/src/img/md/Episodes_React_DevTools.png' alt = 'Espisodes-ReactDevTools' max-height = 150px/>
-        <img src = 'app/src/img/md/React_DevTools_initial.png' alt = 'Espisodes-ReactDevTools' max-height = 150px/>
+        <img src = 'app/src/img/md/Redux_DevTools_initial.png' alt = 'Espisodes-ReactDevTools' max-height = 150px/>
     </div>
-    <div style = 'display: flex; justify-content: space-evenly ; margin: 50px '> 
-        <img src = 'app/src/img/md/Episode__ReactDevTools.png' alt = 'Espisode-ReactDevTools' max-height = 150px />
+    <div style = 'display: flex; justify-content: space-evenly ; margin: 10px '> 
+        <img src = 'app/src/img/md/Episode_React_DevTools.png' alt = 'Espisode-ReactDevTools' max-height = 150px />
+        <img src = 'app/src/img/md/AddEpisode_React_DevTools.png' alt = 'Espisode-ReactDevTools' max-height = 150px />
     </div>
      
 </div>
