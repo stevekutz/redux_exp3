@@ -67,10 +67,10 @@ export const addEpisode = newEpisode => (
 
 // sleek
 export const addEpisode = newEpisode => ({type: ADD_EPISODE, payload: newEpisode});
+````
 
-    ````
-    - Build rest of `action creators`
-    ````
+7)  Build rest of `action creators`
+
     export const toggleEpisode = id => ({type: TOGGLE_EPISODE, payload: id});
 
     export const deleteEpisode = id => ({type: DELETE_EPISODE, payload: id});
@@ -90,4 +90,26 @@ export const addEpisode = newEpisode => ({type: ADD_EPISODE, payload: newEpisode
     });
 
     ````
+
+8) ## SPECIAL 
+### Recall that the connect is implemented via  with currying (`invoking connect twice`)
+
+
+<div style = 'border: 1px solid deeppink'>
+    <h3 style = 'font-weight: bold'> Episodes.js with React & Redux DevTools </h3>
+    <div style = 'display: flex; justify-content: space-evenly; margin: 10px '>    
+        <img src = 'app/src/img/md/Episodes_React_DevTools.png' alt = 'Espisodes-ReactDevTools' max-height = 150px/>
+        <img src = 'app/src/img/md/React_DevTools_initial.png' alt = 'Espisodes-ReactDevTools' max-height = 150px/>
+    </div>
+    <div style = 'display: flex; justify-content: space-evenly ; margin: 50px '> 
+        <img src = 'app/src/img/md/Episode__ReactDevTools.png' alt = 'Espisode-ReactDevTools' max-height = 150px />
+    </div>
+     
+</div>
+
+
+````
+     export default connect( null, { toggleEpisode, deleteEpisode })(Episode);
+ ````
+    -  In `Episode` component the first time, we did NOT pass any part of state tree in mapStateToProps 
 
