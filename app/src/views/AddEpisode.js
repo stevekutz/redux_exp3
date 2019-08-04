@@ -82,3 +82,6 @@ export default connect(
 */
 
 export default connect(undefined, {addEpisode})(AddEpisode);
+
+// NO!! causes TypeError: this.props.addEpisode is not a function
+//export default AddEpisode;
