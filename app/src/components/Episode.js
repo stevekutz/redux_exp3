@@ -50,13 +50,13 @@ const Episode = props => {
 }
 
 /*
-// NOT NEEDED !!!! ????
+// NOT NEEDED !!!! 
 const mapStateToProps = state => {
    return state;
  };
 
 export default connect(
-    mapStateToProps,  // NOT NEEDED ???
+    mapStateToProps,  // NOT NEEDED
 //    null,
     {toggleEpisode, deleteEpisode}
 )(Episode);

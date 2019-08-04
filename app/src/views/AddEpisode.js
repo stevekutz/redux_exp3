@@ -71,10 +71,14 @@ class AddEpisode extends React.Component{
 
 }
 
+/*
 //   no mapStateToProps needed !!
 
-
 export default connect(
-    null,    // must pass in null obj
+    // null,        // must pass in null or undefined  obj
+    undefined,    
     {addEpisode}
 )(AddEpisode);
+*/
+
+export default connect(undefined, {addEpisode})(AddEpisode);

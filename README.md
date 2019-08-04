@@ -91,9 +91,7 @@ export const addEpisode = newEpisode => ({type: ADD_EPISODE, payload: newEpisode
 
     ````
 
-8) ## SPECIAL 
-### Recall that the connect is implemented via  with currying (`invoking connect twice`)
-
+8) ## Using Dev Tools 
 
 <div style = 'border: 1px solid deeppink'>
     <h3 style = 'font-weight: bold'> React & Redux DevTools </h3>
@@ -109,10 +107,30 @@ export const addEpisode = newEpisode => ({type: ADD_EPISODE, payload: newEpisode
     </div>
 
 </div>
-
-
 ````
      export default connect( null, { toggleEpisode, deleteEpisode })(Episode);
  ````
-    -  In `Episode` component the first time, we did NOT pass any part of state tree in mapStateToProps 
+
+9) `connect` USAGE 
+- `conect()` will attach the AddEpisode component to the state of the Redux store`
+- `connect()` will return a new connected component that wraps the AddEpisode component. 
+
+    - In `AddEpisode` component the first time, we did NOT pass any part of state tree in mapStateToProps. `We are NOT subscribing to any store updates`
+
+
+    -   Adding to the state tree is demonstrated in Redux DevTools
+    ![AddEpisode_add to state](app/src/img/md/Redux_DevTools_addingToState.png)
+    - mapStateToProps is not utilized
+    ````
+    export default connect(
+    // null,        // must pass in null OR undefined
+    undefined,    
+    {addEpisode}
+    )(AddEpisode);
+    ````
+    - The returned wrapper component does NOT subscribeto any Redux store updates
+    - We pass in all action creators ( e.g. `addEpiode`)that are reliant on Redux & used in handlers(e.g. ` submitNewEpisode_h `)
+    - Our action creators will return  an object {action}
+// that our reducer will receive.
+
 
