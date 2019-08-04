@@ -126,7 +126,7 @@ export const addEpisode = newEpisode => ({type: ADD_EPISODE, payload: newEpisode
     )(AddEpisode);
     ````
     - The returned wrapper component does NOT subscribe to any Redux store updates.
-    - We pass any action creators ( e.g. `addEpiode`)that are reliant on Redux & used in handlers(e.g. ` submitNewEpisode_h `)
+    - We pass any action creators ( e.g. `addEpiode`)that are reliant on Redux & used in handlers(e.g. ` submitNewEpisode_h `). This allows us to call {addEpisode from passed in props object}
     - Our action creators will return  an object {action} that our reducer will receive.
     - IF we did not use `connect()` and instead kept AddEpisode as a `dumb component`, all of its state would be private and controlled within the component. 
     - `TypeError: this.props.addEpisode is not a function` will result if the following is used instead of `connect()`
