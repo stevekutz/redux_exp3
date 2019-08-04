@@ -43,7 +43,7 @@ const Episode = props => {
             <h3 onClick = {handletoggleEpisode}>
                 Title: {props.title}  Season: {props.season}
             </h3>
-
+        {props.watched ? "🙀" : "😌"}
         <button onClick  = {handleDelete}> Delete</button>
         </StyledEpisode>
     )
