@@ -6,18 +6,16 @@ import {connect} from 'react-redux';
 import {toggleEpisode, deleteEpisode} from '../actions/actionsEpisodes';
 
 // UPDATE to use SemanticUI React
-const StyledEpisode = styled(Card)`
-  border: 4px solid green;  
+const StyledEpisode = styled(Card)` 
   margin: 20px 0;
   padding: 0 10px;
   display: flex;
   justify-content: space-between;
-  align-content: center;
-  align-items: center;
   .contentbox {
-    border: 1px solid green;
     width: 50%;
     display: flex;
+    align-items: center;
+
         h3 {
             color: darkblue;
             text-decoration: ${props => props.textdec};
@@ -29,9 +27,14 @@ const StyledEpisode = styled(Card)`
 
   }  
   Button{
-    border: 1px solid dodgerblue;
+    border: 1px solid deeppink;
     margin: 5px;
   }
+  Button:hover {
+    border: 1px solid lightgreen;
+    color: green;
+  }
+
 `;
 
 const Episode = props => {
@@ -56,7 +59,9 @@ const Episode = props => {
                 </h3>
                        {props.watched ? "🙀" : "😌"}
             </div>    
-            <Button onClick  = {handleDelete}> Delete</Button>
+            <Button onClick  = {handleDelete}
+            variant="contained" color="primary"
+            > Delete</Button>
             </StyledEpisode>
         </div>
     )
