@@ -2,6 +2,7 @@ export const ADD_EPISODE = 'ADD_EPISODE';
 export const TOGGLE_EPISODE = 'TOGGLE_EPISODE';
 export const DELETE_EPISODE = 'DELETE_EPISODE';
 export const DELETE_WATCHED = 'DELETE_WATCHED';
+export const UPDATE_EPISODE = 'UPDATE_EPISODE';
 
 /*
 // orig
@@ -29,3 +30,4 @@ export const deleteEpisode = id => ({type: DELETE_EPISODE, payload: id});
 
 export const deleteWatched = id => ({type: DELETE_WATCHED, payload: null}); // may not need null returned!!
  
+export const updateEpisode = updated => ({type: UPDATE_EPISODE, payload: updated});

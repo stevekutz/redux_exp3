@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Card, Button} from '@material-ui/core';
 import {connect} from 'react-redux';
 
-import {toggleEpisode, deleteEpisode} from '../actions/actionsEpisodes';
+import {toggleEpisode, deleteEpisode, updateEpisode} from '../actions/actionsEpisodes';
 
 // UPDATE to use SemanticUI React
 const StyledEpisode = styled(Card)` 

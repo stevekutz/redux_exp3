@@ -13,6 +13,8 @@ import {
     TOGGLE_EPISODE,
     DELETE_EPISODE,
     DELETE_WATCHED,
+    UPDATE_EPISODE,
+    
 } from '../actions/actionsEpisodes';
 
 // set up initial state
@@ -65,6 +67,13 @@ export const episodeReducer = (state = initialState, action) => {
                 episodesInit: state.episodesInit.filter(episode => !episode.watched)
             };        
 
+
+        case UPDATE_EPISODE:
+            return {
+                episodesInit: [
+                    ...state.episodesInit, action.payload
+                ]
+            }    
 
         // DONT'FORGET default
         default:
