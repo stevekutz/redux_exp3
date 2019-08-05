@@ -50,6 +50,7 @@ const Episode = props => {
 
     const handleDelete = () => props.deleteEpisode(props.id);
 
+    // send     
     const handleUpdate = () => props.updateEpisode(props.id);
 
     return(

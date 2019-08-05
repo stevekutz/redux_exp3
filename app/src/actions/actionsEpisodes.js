@@ -30,4 +30,4 @@ export const deleteEpisode = id => ({type: DELETE_EPISODE, payload: id});
 
 export const deleteWatched = id => ({type: DELETE_WATCHED, payload: null}); // may not need null returned!!
  
-export const updateEpisode = updated => ({type: UPDATE_EPISODE, payload: updated});
+export const updateEpisode = (updated) => ({type: UPDATE_EPISODE, payload: updated});

@@ -5,17 +5,13 @@ import './App.css';
 import {Route, NavLink} from 'react-router-dom';
 
 import Episodes from './components/Episodes';
-import AddEpisode from './views/AddEpisode';
-
-
-
 
 // point to local file 
 // backgroundImage: `url(${tzImg})`,
 // point to link
 // backgroundImage: `url(https://i1.wp.com/www.thehomicidalhomemaker.com/wp-content/uploads/2018/05/twilight-zone-mystic-seer-candy-box-bw.png)`,
 
-
+import AddEpisode from './views/AddEpisode';
 
 function App() {
   return (

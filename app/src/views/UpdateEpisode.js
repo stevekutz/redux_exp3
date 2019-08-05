@@ -2,14 +2,17 @@ import React from 'react';
 
 import {connect} from 'react-redux';
 import {updateEpisode} from '../actions/actionsEpisodes';
-import { Button} from "semantic-ui-react";
+
+import { Button, Icon } from "semantic-ui-react";
 
 class UpdateEpisode extends React.Component {
     state = {
-        id: this.props.episodesInit.id,
-        title: this.props.episodesInit,
-        season: this.props.episodesInit.season,
-        watched: this.props.episodesInit.watched,
+        updateLocalState: 'This is Update State Local state',
+        title: '',
+      //  id: this.props.episodesInit.id,
+      //  title: this.props.episodesInit,
+      //  season: this.props.episodesInit.season,
+      //  watched: this.props.episodesInit.watched,
     }
 
     changeHandler = ev => {
@@ -19,6 +22,8 @@ class UpdateEpisode extends React.Component {
     }
 
     submitUpdatedEpisode = (ev, id ) => {
+
+        // match id with selected, push into form inputs, send to reducer
 
         const updated = {...this.state, id: id}
 
@@ -37,7 +42,7 @@ class UpdateEpisode extends React.Component {
                     />
                 
                 </form>
-                <Button type = 'submit'>Update</Button>
+                <Button type = 'submit' value = 'submit'>Update</Button>
             </div>
          )   
 

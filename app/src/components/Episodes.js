@@ -6,6 +6,10 @@ import {deleteWatched} from '../actions/actionsEpisodes';
 import Episode from './Episode';
 import './episodes.css';
 
+import UpdateEpisodes from '../views/UpdateEpisode';
+
+
+
 const Episodes = props => {
  //   {props.episodes.map( (episode, index) => (
 
@@ -24,7 +28,10 @@ const Episodes = props => {
                onClick = { () => {props.deleteWatched() } }          
             >              
                 Delete Watched
-            </button>            
+            </button>
+            
+        <UpdateEpisodes />
+            
         </div>
 
 
