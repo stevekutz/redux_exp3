@@ -112,7 +112,7 @@ export const addEpisode = newEpisode => ({type: ADD_EPISODE, payload: newEpisode
 - `conect()` will attach the AddEpisode component to the state of the Redux store`
 - `connect()` will return a new connected component that wraps the AddEpisode component. 
 
-    - In `AddEpisode` component the first time, we did NOT pass any part of state tree in mapStateToProps. `We are NOT subscribing to any store updates`
+    - In `AddEpisode` component the first time, we did NOT pass any part of the state tree in mapStateToProps. `We are NOT subscribing to any store updates`
 
 
     -   Adding to the state tree is demonstrated in Redux DevTools

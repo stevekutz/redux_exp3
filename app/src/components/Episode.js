@@ -38,7 +38,7 @@ const StyledEpisode = styled(Card)`
 `;
 
 const Episode = props => {
-
+    console.log('Episode props >>>', props);
 /*
     //handlers
     const handletoggleEpisode = () => {

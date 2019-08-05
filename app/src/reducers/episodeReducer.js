@@ -1,4 +1,4 @@
-import episodes from './favEpisodes'; // arr of obj
+import episodesInit from './favEpisodes'; // arr of obj
 
 /*
 export const ADD_EPISODE = 'ADD_EPISODE';
@@ -17,7 +17,7 @@ import {
 
 // set up initial state
 // const initialState = {initialStateEpisodes};
-const initialState = {episodes};
+const initialState = {episodesInit};
 
 // ALWAYS pass in initial state and an action
 export const episodeReducer = (state = initialState, action) => {
@@ -26,8 +26,8 @@ export const episodeReducer = (state = initialState, action) => {
         case ADD_EPISODE:  
             return {
            //     ...state,   // NOT needed, we spread in existing state and append payload
-                episodes: [
-                    ...state.episodes, action.payload
+                episodesInit: [
+                    ...state.episodesInit, action.payload
                 ]
             };
    /*     
@@ -45,7 +45,8 @@ export const episodeReducer = (state = initialState, action) => {
         case TOGGLE_EPISODE:
             return {
         //        ...state,
-                episodes: state.episodes.map(episode => {
+        // pisodes: state.episodes.map(episode => {
+                episodesInit: state.episodesInit.map(episode => {
                     if(Number(episode.id) === Number(action.payload)) return {...episode, watched: !episode.watched}
                     return episode;          
                 })
@@ -53,14 +54,15 @@ export const episodeReducer = (state = initialState, action) => {
              
          case DELETE_EPISODE:
             return {
-                episodes: state.episodes.filter(
+                //episodes: state.episodesInit.filter(
+                episodesInit: state.episodesInit.filter(
                     episode => episode.id !== action.payload
                 )
             };   
 
         case DELETE_WATCHED:
             return {
-                episodes: state.episodes.filter(episode => !episode.watched)
+                episodesInit: state.episodesInit.filter(episode => !episode.watched)
             };        
 
 

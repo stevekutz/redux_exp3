@@ -7,16 +7,19 @@ import Episode from './Episode';
 import './episodes.css';
 
 const Episodes = props => {
+ //   {props.episodes.map( (episode, index) => (
 
+//     console.log('props Eppisodes ', props);
     return (
         <div className = 'episodesContainer'>
-            {props.episodes.map( (episode, index) => (
+
+        {props.episodesProp.map( (episode, index) => (
                 <Episode
                     key = {index}
                     {...episode}
                 />
             ))}
-
+   
             <button                 // NOT props.deleteWatched
                onClick = { () => {props.deleteWatched() } }          
             >              
@@ -45,7 +48,8 @@ const mapStateToProps = state => (
 */
 
 // sleek
-const mapStateToProps = state => ({episodes: state.episodes.episodes});
+// const mapStateToProps = state => ({episodes: state.episodes.episodes});
+const mapStateToProps = state => ({episodesProp: state.episodes.episodesInit});
 
 
 export default connect(
