@@ -2,6 +2,7 @@ import React from 'react';
 
 import {connect} from 'react-redux';
 import {updateEpisode} from '../actions/actionsEpisodes';
+import { Button} from "semantic-ui-react";
 
 class UpdateEpisode extends React.Component {
     state = {
@@ -24,10 +25,23 @@ class UpdateEpisode extends React.Component {
         this.props.updateEpisode(updated);
     };
 
+    render() {
+         return (
+            <div>
+                <form onSubmit = {this.updateEpisode}>
+                    <input
+                        type = 'text'
+                        onChange = {this.changeHandler}
+                        name = 'title'
+                        value = {this.state.title}
+                    />
+                
+                </form>
+                <Button type = 'submit'>Update</Button>
+            </div>
+         )   
 
-
-
-
+    }
 
 }
 

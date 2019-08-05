@@ -50,6 +50,8 @@ const Episode = props => {
 
     const handleDelete = () => props.deleteEpisode(props.id);
 
+    const handleUpdate = () => props.updateEpisode(props.id);
+
     return(
         <div>
             <StyledEpisode textdec = {props.watched ? 'line-through' : 'none'}> 
@@ -62,6 +64,9 @@ const Episode = props => {
             <Button onClick  = {handleDelete}
             variant="contained" color="primary"
             > Delete</Button>
+
+            <Button onClick = {handleUpdate}> Update </Button>
+
             </StyledEpisode>
         </div>
     )
@@ -83,4 +88,4 @@ export default connect(
 
 // NO state variables, just passing prop info  & calling action creators 
 // but must pass in null obj instead of leaving undefined
-export default connect( null, { toggleEpisode, deleteEpisode })(Episode);
+export default connect( null, { toggleEpisode, deleteEpisode, updateEpisode })(Episode);
